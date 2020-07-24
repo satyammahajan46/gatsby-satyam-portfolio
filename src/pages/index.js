@@ -97,7 +97,7 @@ const RenderBody = ({ home, projects, meta }) => (
     <>
         <Helmet
             title={meta.title}
-            titleTemplate={`%s | ${meta.title}`}
+            titleTemplate={`%s`}
             meta={[
                 {
                     name: `description`,
@@ -204,7 +204,7 @@ export const query = graphql`
                                 url
                             }
                         }
-                        content
+                         content
                         about_title
                         about_bio
                         about_links {
@@ -213,7 +213,7 @@ export const query = graphql`
                     }
                 }
             }
-            allProjects {
+            allProjects (sortBy: project_post_date_DESC) {
                 edges {
                     node {
                         project_title

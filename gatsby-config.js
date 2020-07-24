@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Prist | Gatsby & Prismic Starter`,
-        description: `A starter powered by Gatsby and Prismic to showcase portfolios and blogs.`,
-    author: `Marguerite Roth | marguerite.io`,
+    title: `Portfolio`,
+        description: `My personal portfolio and blog`,
+    author: `Satyam Mahajan`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -26,7 +26,8 @@ module.exports = {
     {
         resolve: 'gatsby-source-prismic-graphql',
         options: {
-            repositoryName: 'prist', // (REQUIRED, replace with your own)
+          repositoryName: 'satyamPortfolio', // (REQUIRED, replace with your own)
+          accessToken: 'MC5YeHFRN2hFQUFDUUFsNEhG.DO-_vQlQ77-977-9Cu-_ve-_ve-_ve-_vXHvv70yTzsGPidU77-977-9eQV4UTsAMhtu77-9',
             linkResolver: () => post => `/${post.uid}`,
         }
     },
