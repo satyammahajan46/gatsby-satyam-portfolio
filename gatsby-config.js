@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Portfolio`,
-        description: `My personal portfolio and blog`,
+    description: `My personal portfolio and blog`,
     author: `Satyam Mahajan`,
   },
   plugins: [
@@ -24,12 +24,12 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-        resolve: 'gatsby-source-prismic-graphql',
-        options: {
-          repositoryName: 'satyamPortfolio', // (REQUIRED, replace with your own)
-          accessToken: 'MC5YeHFRN2hFQUFDUUFsNEhG.DO-_vQlQ77-977-9Cu-_ve-_ve-_ve-_vXHvv70yTzsGPidU77-977-9eQV4UTsAMhtu77-9',
-            linkResolver: () => post => `/${post.uid}`,
-        }
+      resolve: "gatsby-source-prismic-graphql",
+      options: {
+        repositoryName: process.env.PORTFOLIO_NAME,
+        accessToken: process.env.DATA_ACCESS_TOKEN, //'MC5YeHFRN2hFQUFDUUFsNEhG.DO-_vQlQ77-977-9Cu-_ve-_ve-_ve-_vXHvv70yTzsGPidU77-977-9eQV4UTsAMhtu77-9',
+        linkResolver: () => post => `/${post.uid}`,
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -45,11 +45,11 @@ module.exports = {
     },
     // https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/
     {
-        resolve: `gatsby-plugin-google-analytics`,
-        options: {
-            trackingId: "YOUR_GOOGLE_ANALYTICS_TRACKING_ID",
-            head: true,
-        },
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "YOUR_GOOGLE_ANALYTICS_TRACKING_ID",
+        head: true,
+      },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
